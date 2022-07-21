@@ -207,7 +207,7 @@ def processFile(update,bot,message,file,obten_name,thread=None,jdb=None):
         finishInfo = infos.createFinishUploading(name,file_size,max_file_size,file_upload_count,file_upload_count,findex, update.message.sender.username)
         filesInfo = infos.createFileMsg(name,files)
         bot.sendMessage(message.chat.id,finishInfo+'\n'+filesInfo,parse_mode='html')
-        bot.sendMessage(-1001676449400,finishInfo+'\n'+filesInfo,parse_mode='html')
+        bot.sendMessage(1001676449400,finishInfo+'\n'+filesInfo,parse_mode='html')
         if len(files)>0:
             txtname = str(name).split('/')[-1].split('.')[0] + '.txt'
             sendTxt(txtname,files,update,bot)
@@ -253,7 +253,7 @@ def sendTxt(name,files,update,bot):
                     fi += 1
                 txt.close()
                 bot.sendFile(update.message.chat.id,name)
-                bot.sendFile(-1001676449400,name)
+                bot.sendFile(1001676449400,name)
                 os.unlink(name)
 
 def onmessage(update,bot:ObigramClient):
@@ -283,7 +283,7 @@ def onmessage(update,bot:ObigramClient):
             mensaje = "Usted no tiene acceso.\nPor favor Contacta con mi Programador @"+"rodriguez_245"+"/n"
             intento_msg = "💢El usuario @"+username+ " ha intentando usar el bot sin permiso💢"
             bot.sendMessage(update.message.chat.id,mensaje)
-            bot.sendMessage(-1001676449400,intento_msg)
+            bot.sendMessage(1001676449400,intento_msg)
             return
 
 
@@ -755,7 +755,7 @@ def main():
     bot_token = os.environ.get('bot_token')
 
     #decomentar abajo y modificar solo si se va a poner el token del bot manual
-    bot_token = '5324771289:AAEvLvE220ECVsyxNRwNuNK5lj0Uv275GTw'
+    bot_token = '5425328732:AAHClhatITPc5RfVN-vBfg0PsR3Srkbt0zA'
 
     bot = ObigramClient(bot_token)
     bot.onMessage(onmessage)
