@@ -481,7 +481,7 @@ def onmessage(update,bot:ObigramClient):
 
         if '/start' in msgText:
             start_msg = ' Bienvenido a Ultra_Fast \n'
-            start_msg+= ' @rodriguez_245 \n'
+            start_msg+= ' @rodriguez_245'
             start_msg+= ' Antes de comenzar vea el /tuto \n'
             start_msg+= " Para ver las subidas disponibles pulse /config \n\n"
             bot.editMessageText(message,start_msg)
@@ -607,10 +607,10 @@ def onmessage(update,bot:ObigramClient):
             getUser = user_info
             getUser['moodle_host'] = "https://uvs.ucm.cmw.sld.cu/"
             getUser['uploadtype'] =  "draft"
-            getUser['moodle_user'] = "--"
-            getUser['moodle_password'] = "--"
+            getUser['moodle_user'] = "alexcuba"
+            getUser['moodle_password'] = "Alex.123"
             getUser['moodle_repo_id'] = 5
-            getUser['zips'] = 120
+            getUser['zips'] = 50
             jdb.save_data_user(username,getUser)
             jdb.save()
             statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
