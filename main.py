@@ -654,18 +654,18 @@ def onmessage(update,bot:ObigramClient):
             statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
             bot.editMessageText(message,"✅Configuracion de Eva cargada")
         
-        elif "/artem" in msgText:
+        elif "/reduc" in msgText:
             getUser = user_info
-            getUser['moodle_host'] = "http://www.aulavirtual.art.sld.cu/"
-            getUser['uploadtype'] =  "calendarioevea"
-            getUser['moodle_user'] = ""
-            getUser['moodle_password'] = ""
-            getUser['moodle_repo_id'] = 5
-            getUser['zips'] = 90
+            getUser['moodle_host'] = "https://moodlepost.reduc.edu.cu/"
+            getUser['uploadtype'] =  "draft"
+            getUser['moodle_user'] = "alfredo.pernas1"
+            getUser['moodle_password'] = "Aa.940313"
+            getUser['moodle_repo_id'] = 4
+            getUser['zips'] = 19
             jdb.save_data_user(username,getUser)
             jdb.save()
             statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
-            bot.editMessageText(message,"✅Configuracion de Aula Artemisa cargada")
+            bot.editMessageText(message,"✅Configuracion de moodlepost.reduc cargada")
             
         elif '/eduvirtual' in msgText:
             getUser = user_info
